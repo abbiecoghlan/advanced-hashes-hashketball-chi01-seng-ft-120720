@@ -218,12 +218,12 @@ end
 
 
 def most_points_scored
-game_hash
+  game_hash
 
   most_points_scored = nil  
   player_name = nil
  
- game_hash[:home][:players].each do |stats|
+  game_hash[:home][:players].each do |stats|
 
     if most_points_scored == nil
         most_points_scored = stats[:points]
