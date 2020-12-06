@@ -140,6 +140,7 @@ end
 
 
 def shoe_size(player)
+  binging.pry
   game_hash
   game_hash.each do |home_or_away, team_hash|
     team_hash[:players].each do |stats|
@@ -239,11 +240,7 @@ def most_points_scored
  player_name 
 end
 
-def testing
-  binding.pry
-  test_result = most_points_scored()
-  binding.pry
-end 
+
 
 
 def winning_team
