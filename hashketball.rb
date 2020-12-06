@@ -206,12 +206,9 @@ def big_shoe_rebounds
       if biggest_shoe == nil
         biggest_shoe = stats[:shoe]
         biggest_rebounds = stats[:rebounds]
-      else
-        if biggest_shoe < stats[:shoe]
+      elsif biggest_shoe < stats[:shoe]
           biggest_shoe = stats[:shoe]
-          biggest_rebounds = stats[:rebounds]          
-        end
-        
+          biggest_rebounds = stats[:rebounds]         
       end
     end
   end
