@@ -291,5 +291,84 @@ end
 
 
 def winning_team
+  game_hash
+
+  home_array = game_hash[:home][:players].collect do |stats|
+    stats[:points]
+  end
+  
+  away_array = game_hash[:away][:players].collect do |stats|
+    stats[:points]
+  end
+  
+  if home_array.sum > away_array.sum 
+    return game_hash[:home][:team_name]
+   else
+    return game_hash[:away][:team_name]
+  end 
+ 
+end 
+
+
+def player_with_longest_name
+  game_hash
+
+  longest_name_length = nil  
+  player_name = nil
+  
+  
+  game_hash.each do |home_or_away, team_hash|
+    team_hash[:players].each do |stats|
+      
+      if longest_name_length == nil
+        longest_name_length = stats[:player_name].length
+        player_name = stats[:player_name]
+      
+      else 
+        if longest_name_length < stats[:player_name].length
+          longest_name_length = stats[:player_name].length
+          player_name = stats[:player_name]
+        end 
+
+      end
+    
+    end 
+  end
+ return player_name
+end
+
+
+def long_name_steals_a_ton?
+  
+  game_hash
+  longest_name = player_with_longest_name
+
+  most_steals = nil  
+  player_name = nil
+  
+  
+  game_hash.each do |home_or_away, team_hash|
+    team_hash[:players].each do |stats|
+      
+      if most_steals == nil
+        most_steals = stats[:steals]
+        player_name = stats[:player_name]
+      
+      else 
+        if most_steals < stats[:steals]
+          most_steals = stats[:steals]
+          player_name = stats[:player_name]
+        end 
+
+      end
+    
+    end 
+  end
+  if player_name == longest_name
+    return true 
+  else 
+    return false
+  end 
   
 end 
+
