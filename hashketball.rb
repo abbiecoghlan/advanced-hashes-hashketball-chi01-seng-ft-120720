@@ -229,11 +229,9 @@ def most_points_scored
     if most_points_scored == nil
         most_points_scored = stats[:points]
         player_name = stats[:player_name]
-    else 
-      if most_points_scored < stats[:points]
+    elsif most_points_scored < stats[:points]
         most_points_scored = stats[:points]
         player_name = stats[:player_name]  
-      end 
     end 
   end 
   end 
