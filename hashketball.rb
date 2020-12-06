@@ -239,6 +239,11 @@ def most_points_scored
  player_name 
 end
 
+def testing
+  test_result = most_points_scored()
+  binding.pry
+end 
+
 
 def winning_team
   game_hash
