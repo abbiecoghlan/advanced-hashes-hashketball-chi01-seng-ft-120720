@@ -223,34 +223,19 @@ def most_points_scored
   most_points_scored = nil  
   player_name = nil
  
-  game_hash[:home][:players].each do |stats|
-
+  game_hash.each do |home_or_away, team_hash|
+  team_hash[:players].each do |stats|
     if most_points_scored == nil
         most_points_scored = stats[:points]
         player_name = stats[:player_name]
-        
-      else
-        if most_points_scored < stats[:points]
-         most_points_scored = stats[:points]
-         player_name = stats[:player_name]          
-        end 
-    end 
-  end 
- 
-  game_hash[:away][:players].each do |stats|
-
-    if most_points_scored == nil
+    else 
+      if most_points_scored < stats[:points]
         most_points_scored = stats[:points]
-        player_name = stats[:player_name]
-        
-      else
-        if most_points_scored < stats[:points]
-         most_points_scored = stats[:points]
-         player_name = stats[:player_name]          
-        end 
+        player_name = stats[:player_name]  
+      end 
     end 
   end 
- 
+  end 
  player_name 
 end
 
