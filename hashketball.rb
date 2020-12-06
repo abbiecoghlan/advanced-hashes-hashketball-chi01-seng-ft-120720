@@ -192,8 +192,6 @@ def player_stats(player)
 end 
 
 
-
-
 def big_shoe_rebounds
   game_hash
 
@@ -215,7 +213,6 @@ def big_shoe_rebounds
 end
 
 
-
 def most_points_scored
   game_hash
 
@@ -223,25 +220,23 @@ def most_points_scored
   player_name = nil
  
   game_hash.each do |home_or_away, team_hash|
-  team_hash[:players].each do |stats|
-    if most_points_scored == nil
+    team_hash[:players].each do |stats|
+      if most_points_scored == nil
         most_points_scored = stats[:points]
         player_name = stats[:player_name]
-    elsif most_points_scored < stats[:points]
+      elsif most_points_scored < stats[:points]
         most_points_scored = stats[:points]
         player_name = stats[:player_name]  
+      end 
     end 
-  end 
   end 
  player_name 
 end
 
 
-
-
 def winning_team
   game_hash
-
+  
   home_array = game_hash[:home][:players].collect do |stats|
     stats[:points]
   end
