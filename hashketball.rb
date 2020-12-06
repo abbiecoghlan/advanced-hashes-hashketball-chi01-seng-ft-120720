@@ -129,19 +129,16 @@ end
 
 def num_points_scored(player)
   game_hash
-  game_hash.each do |
 
-  game_hash[:home][:players].each do |stats|
-    if stats[:player_name] == player
-      return stats[:points]
-    end 
-  end 
-
-  game_hash[:away][:players].each do |stats|
-    if stats[:player_name] == player
-      return stats[:points]
-    end 
+  game_hash.each do |home_or_away, team_hash|
+    team_hash[:players].each do |stats|
+      if stats[:player_name] == player
+        return stats[:points]
+      end
+    end
   end
+
+
 end
 
 
