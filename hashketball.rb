@@ -125,6 +125,7 @@ def game_hash
   }
 end
 
+
 def num_points_scored(player)
   game_hash
   game_hash.each do |home_or_away, team_hash|
@@ -158,10 +159,12 @@ def team_colors(team)
   end  
 end   
 
+
 def team_names
   game_hash
   team_array = [game_hash[:home][:team_name], game_hash[:away][:team_name]]
 end
+
 
 def player_numbers(team)
   game_hash
@@ -175,6 +178,7 @@ def player_numbers(team)
   end 
   new_array
 end
+
 
 def player_stats(player)
   game_hash
