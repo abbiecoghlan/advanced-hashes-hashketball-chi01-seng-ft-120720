@@ -196,10 +196,13 @@ end
 
 
 def big_shoe_rebounds
-game_hash
+  game_hash
 
   biggest_shoe = nil  
   biggest_rebounds = nil
+  
+  game_hash.each
+
  
  game_hash[:home][:players].each do |stats|
 
