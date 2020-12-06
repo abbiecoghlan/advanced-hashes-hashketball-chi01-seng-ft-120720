@@ -140,6 +140,7 @@ end
 
 
 def shoe_size(player)
+  binding.pry
   game_hash
   game_hash.each do |home_or_away, team_hash|
     team_hash[:players].each do |stats|
