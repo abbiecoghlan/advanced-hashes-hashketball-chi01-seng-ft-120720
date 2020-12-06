@@ -275,12 +275,9 @@ def player_with_longest_name
         longest_name_length = stats[:player_name].length
         player_name = stats[:player_name]
       
-      else 
-        if longest_name_length < stats[:player_name].length
+      elsif longest_name_length < stats[:player_name].length
           longest_name_length = stats[:player_name].length
           player_name = stats[:player_name]
-        end 
-
       end
     
     end 
@@ -305,12 +302,9 @@ def long_name_steals_a_ton?
         most_steals = stats[:steals]
         player_name = stats[:player_name]
       
-      else 
-        if most_steals < stats[:steals]
+      elsif most_steals < stats[:steals]
           most_steals = stats[:steals]
           player_name = stats[:player_name]
-        end 
-
       end
     
     end 
