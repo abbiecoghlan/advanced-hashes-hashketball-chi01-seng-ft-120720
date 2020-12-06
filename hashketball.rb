@@ -240,6 +240,7 @@ def most_points_scored
 end
 
 def testing
+  binding.pry
   test_result = most_points_scored()
   binding.pry
 end 
